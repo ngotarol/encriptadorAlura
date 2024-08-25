@@ -4,6 +4,13 @@
     const btnCopiar = document.getElementById('botonCopiar');
     const textarea = document.getElementById('texto');
     const mensaje = document.getElementById('textoResultado');
+    const diccionario = {
+        "a": "ai",
+        "e": "enter",
+        "i": "imes",
+        "o": "ober",
+        "u": "ufat"
+    };
 
 function habilitadorEncriptacion() {
     let titulo = document.getElementById('sinresultadoTitulo');
@@ -30,13 +37,7 @@ function verificarMinusculas(textoValidar) {
 //Funcion para encriptar el texto
 function encriptarTexto(){
     let texto = textarea.value;
-    let diccionario = {
-        "a": "ai",
-        "e": "enter",
-        "i": "imes",
-        "o": "ober",
-        "u": "ufat"
-    };
+
     let textoEncriptado = ""
 
     if (!verificarMinusculas(texto)) {        
@@ -53,30 +54,14 @@ function encriptarTexto(){
 
 //Funcion para desencriptar el texto
 function desencriptarTexto(){
-    let texto = textarea.value;    
-    let diccionario = {
-        "ai":"a",
-        "enter":"e",
-        "imes":"i",
-        "ober":"o",
-        "ufat":"u"
-    };
-    let textoDesencriptado = ""
+    let texto = textarea.value;  
 
-    if (!verificarMinusculas(texto)) {        
-        for (let index = 0; index < texto.length; index++) {
-            let element = texto[index];
-            if (/^[aeiou]+$/.test(element)){
-                while (!diccionario[element]) {
-                    ++index;
-                    if (index > texto.length) break;
-                    element += texto[index];                    
-                }
-                element = diccionario[element]??element;
-            }
-            textoDesencriptado += element;
+    if (!verificarMinusculas(texto)) {
+        for (const [clave, valor] of Object.entries(diccionario)) {            
+            let regex = new RegExp(valor, 'g');
+            texto = texto.replace(regex,clave);
         }
-        console.log(textoDesencriptado);
+        textoDesencriptado = texto;
         mensaje.innerText = textoDesencriptado;
         document.getElementById('mostrartextoSinresultado').style.display = "none";       
         document.getElementById('mostrartextoConresultado').style.display = "flex";
