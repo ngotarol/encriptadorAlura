@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <title>Encriptador de texto</title>
+</head>
+<body>
+    <main>
+        <section class="logo">
+            <img src="./assets/logo.png" alt="Logo de Alura">
+        </section>
+        <section class="ingresotexto">            
+            <form class="ingresotexto__sup">
+                <textarea class="ingresotexto__sup__input" name="texto" id="texto" placeholder="Ingrese el texto aquí"></textarea>
+            </form>
+            <section class="ingresotexto__inf">
+                <div class="ingresotexto__inf__mensaje">
+                    <img src="./assets/Vector.png" alt="signo de alerta">
+                    <p>Solo letras minúsculas y sin acentos</p>
+                </div>            
+                <div class="ingresotexto__inf__botones">
+                    <button id="botonEncriptar" class="ingresotexto__inf__botones__boton1" disabled>Encriptar</button>
+                    <button id="botonDesencriptar" class="ingresotexto__inf__botones__boton2" disabled>Desencriptar</button>
+                </div>                 
+            </section>
+
+        </section>
+        <section class="mostrartexto">
+            <section id="mostrartextoSinresultado" class="mostrartexto__sinresultado">
+                <div class="mostrartexto__sinresultado__imagen">
+                    <img src="./assets/Muñeco.png" alt="Imagen de un muneco">
+                </div>
+                <div>
+                    <h2 id="sinresultadoTitulo" class="mostrartexto__sinresultado__titulo">Ningun mensaje fue encontrado</h2>
+                    <p id="sinresultadoSubtitulo" class="mostrartexto__sinresultado__subtitulo">Ingresa el texto que desees encriptar o desencriptar</p>
+                </div>
+            </section>
+            <section id="mostrartextoConresultado" class="mostrartexto__conresultado">
+                <div class="mostrartexto__conresultado__sup">
+                    <p id="textoResultado" class="mostrartexto__conresultado__texto" >este es el resultado</p>
+                </div>
+                <div class="mostrartexto__conresultado__inf">
+                    <button id="botonCopiar" class="mostrartexto__conresultado__botoncopiar">Copiar</button>
+                </div>
+            </section>
+        </section>
+    </main>
+    <footer>
+        <p>Sitio por Natalia Otarola</p>
+        <p>ALURA - ONE</p>
+    </footer>
+    <script src="app.js"></script>
+</body>
+</html>

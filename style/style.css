@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+    --color-primaria: #F3F5FC;
+    --color-secundaria: #0A3871;
+    --color-terciaria: #D8DFE8;
+    --color-cuarto: #495057;
+
+    --fuente1: 'Inter', sans-serif;
+}
+
+html,body{
+    height: 100%; /* Asegura que el html y el body ocupen el 100% de la altura de la ventana */
+    margin: 0;    /* Elimina el margen por defecto */
+    padding: 0;   /* Elimina el relleno por defecto */
+}
+
+body{
+    background-color: var(--color-primaria);
+    color: var(--color-secundaria);    
+    border: 1px solid #ccc; /* Borde del recuadro */
+    border-radius: 4px; /* Esquinas redondeadas opcional */
+}
+
+main{    
+    height: 88%;
+    display: flex;
+    justify-content: space-between;
+    margin: 1%;
+    border: 1px solid #ccc; /* Borde del recuadro */
+    border-radius: 4px; /* Esquinas redondeadas opcional */
+}
+
+footer{
+    display: flex;
+    flex-direction: column-reverse;
+    height: 8%;
+    background-color: var(--color-secundaria);
+    color: var(--color-terciaria);
+    font-family: var(--fuente1);
+    font-size: 1em;
+    font-weight: 600;
+    text-align: center;
+    position:relative;   
+    align-items: center; 
+    
+}
+
+.logo{
+    width: 10%;
+}
+
+.ingresotexto{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc; /* Borde del recuadro */
+    border-radius: 4px; /* Esquinas redondeadas opcional */
+    padding: 2%;
+    width: 60%; 
+    height: 90%;  
+}
+
+.ingresotexto__sup{
+    height: 90%;
+    width: 100%;    
+    border: 1px solid #ccc; /* Borde del recuadro */
+    border-radius: 4px; /* Esquinas redondeadas opcional */
+}
+.ingresotexto__inf{
+    height: 10%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: baseline;
+    border: 1px solid #ccc; /* Borde del recuadro */
+    border-radius: 4px; /* Esquinas redondeadas opcional */
+}
+
+textarea::placeholder{
+    color: var(--color-secundaria);
+}
+
+.ingresotexto__sup__input {
+    background-color: var(--color-primaria);
+    height: 100%;
+    width: 100%;  
+    font-family: var(--fuente1);
+    color: var(--color-secundaria);
+    font-size: 2em;
+    font-weight: 400;
+    text-align: left;
+    overflow-wrap: break-word;
+    resize: none;
+    border: 1px solid #0A3871; /* Borde del recuadro */
+    border-radius: 4px; /* Esquinas redondeadas opcional */
+
+}
+
+.ingresotexto__inf__mensaje{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-family: var(--fuente1);
+    font-size: 0.8em;
+    line-height: 2em;
+    font-weight: 400; 
+    text-align: left;
+    color: var(--color-cuarto);
+}
+
+.ingresotexto__inf__botones{
+    width: 100%; 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    
+}
+button {
+    transition: 500ms;
+}
+
+.ingresotexto__inf__botones__boton1{    
+    background-color: var(--color-secundaria);
+    color: var(--color-terciaria);
+    text-align: center;
+    font-size: 1em;
+    height: 3em;
+    width: 45%;
+    border: 1px solid #0A3871; /* Borde del recuadro */
+    border-radius: 10px; /* Esquinas redondeadas opcional */
+}
+.ingresotexto__inf__botones__boton1:disabled{
+    background-color: var(--color-cuarto);
+}
+
+.ingresotexto__inf__botones__boton2{
+    background-color: var(--color-terciaria);
+    color: var(--color-secundaria);
+    text-align: center;
+    font-size: 1em;
+    height: 3em;
+    width: 45%;
+    border: 1px solid #0A3871; /* Borde del recuadro */
+    border-radius: 10px; /* Esquinas redondeadas opcional */
+}
+
+.ingresotexto__inf__botones__boton2:disabled{
+    background-color: var(--color-cuarto);
+    color: var(--color-terciaria);
+}
+.mostrartexto{
+    width: 30%;  
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: white;
+    margin: 0% 5% 0% 5%;
+    border: 1px solid #a71212; 
+    border-radius: 2em; 
+}
+
+.mostrartexto__sinresultado{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    max-width: 95%;
+    max-height: 100%;
+    font-family: var(--fuente1);    
+    overflow-wrap: break-word;
+    text-align: center;
+    color: var(--color-secundaria);
+    border: 1px solid #a42fa8; /* Borde del recuadro */
+}
+
+.mostrartexto__sinresultado__imagen{
+    max-width: 95%;
+    height: auto; 
+}
+
+.mostrartexto__sinresultado__titulo{
+    font-size: 1.5em;
+    line-height: 2em;
+    font-weight:bold;
+}
+
+.mostrartexto__sinresultado__subtitulo{
+    font-size: 1em;
+    line-height: 1.5em;
+    font-weight: 400;     
+}
+
+.mostrartexto__conresultado{
+    display: none;
+    flex-direction: column;
+    margin: 0% 5% 0% 5%;
+    width: 80%;
+    height: 100%;
+    background-color: white;
+    border: 1px  #ccc; 
+    border-radius: 2em; 
+    align-items: center;
+    border: 1px solid #139c13; /* Borde del recuadro */
+    border-radius: 4px; /* Esquinas redondeadas opcional */
+}
+
+.mostrartexto__conresultado__sup{
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #9c6c13; /* Borde del recuadro */
+    border-radius: 4px; /* Esquinas redondeadas opcional */
+}
+
+.mostrartexto__conresultado__inf{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #0d10d1; /* Borde del recuadro */
+    border-radius: 4px; /* Esquinas redondeadas opcional */
+}
+
+.mostrartexto__conresultado__texto{
+    font-family: var(--fuente1);
+    color: var(--color-secundaria);
+    font-size: 2em;
+    font-weight: 400;
+    text-align: left;
+    overflow-wrap: break-word;
+}
+
+.mostrartexto__conresultado__botoncopiar{
+    background-color: white;
+    color: var(--color-secundaria);
+    text-align: center;
+    font-size: 1em;
+    height: 3em;
+    width: 80%;
+    border: 1px solid #0A3871; /* Borde del recuadro */
+    border-radius: 10px; /* Esquinas redondeadas opcional */
+
+}
