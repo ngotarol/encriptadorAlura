@@ -11,27 +11,29 @@
 
 html,body{
     height: 100%;
-    width: 100%; /* Asegura que el html y el body ocupen el 100% de la altura de la ventana */
+    width: 100%;
     margin: 0;    /* Elimina el margen por defecto */
     padding: 0;   /* Elimina el relleno por defecto */
 }
 
-body{
+body{       
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     align-items: center;
-    justify-content: start;
+    justify-items: center;
     background-color: var(--color-primaria);
     color: var(--color-secundaria);    
 }
 
 .contenedor{    
+    max-width: 1600px;  
+    width: 90%;
     height: 90%;
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
     margin-left: 20px;
-    margin-right: 2rem;
+    margin-right: 40px;
     flex-direction: row;
 }
 
@@ -122,7 +124,7 @@ textarea::placeholder{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: flex-end; 
+    align-items: center; 
     border: 1px solid #711f0a; /* Borde del recuadro */
 }
 
@@ -189,6 +191,9 @@ button {
     max-width: 95%;
     height: auto; 
 }
+.mostrartexto__sinresultado__imagen img {
+    inline-size: -webkit-fill-available;
+}
 
 .mostrartexto__sinresultado__titulo{
     font-size: 1.5rem;
@@ -218,7 +223,7 @@ button {
 
 .mostrartexto__conresultado__sup{
     width: 100%;
-    height: 90%;
+    height: 80%;
     display: flex;
     flex-direction: column;
     border: 1px solid #0A3871; /* Borde del recuadro */
@@ -226,7 +231,7 @@ button {
 
 .mostrartexto__conresultado__inf{
     width: 100%;
-    height: 10%;
+    height: 15%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -253,24 +258,30 @@ button {
     text-align: center;
     font-size: 1rem;
     height: 4rem;
-    width: 100%;
+    width: 80%;
     border: 1px solid var(--color-secundaria); 
     border-radius: 1.5rem; 
 }
 
-@media (max-width:1200px){
+@media (max-width:900px){
 
     html,body{
         display: flex;
         height: auto;
-        width: auto;
+        width: 100%;
     }
     footer{
         height: 30px;
+        position: fixed;
+     
     }
     .contenedor{
         flex-direction: column;
-        padding: 1px;
+        justify-content: center;
+        margin-bottom: 30px;
+        margin-top: 30px;
+        margin-right: 0%;
+        padding: 15px;
     }
     .logo{
         height: 150px;
@@ -280,6 +291,7 @@ button {
         width: auto;
         height: auto;
         margin-bottom: 60px;
+        padding-right: 0%;
     }
     .mostrartexto{
         width: auto;
@@ -303,18 +315,17 @@ button {
         height: 4rem;
         border-radius: 1.5rem;
     }
-    .mostrartexto{
-        margin: 0%;
-    }
+
     .mostrartexto__sinresultado__imagen{
         display: none;
     }
     .mostrartexto__conresultado{
         height: auto;
         width: 90%;
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
     }
 
-
-
+    .mostrartexto__conresultado__sup{
+        height: auto;
+    }
 }
