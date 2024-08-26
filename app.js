@@ -17,17 +17,37 @@ function habilitadorEncriptacion() {
     let subtitulo = document.getElementById('sinresultadoSubtitulo');
 
     let valor = textarea.value; 
-    if (verificarMinusculas(valor) ) {
-        titulo.innerText = "Texto no encriptable";
-        subtitulo.innerText = "Texto debe contener sólo letras minúsculas";
-        btnEncriptar.disabled = true;
-        btnDesencriptar.disabled = true;
-    } else {
-        titulo.innerText = "Texto encriptable";
-        subtitulo.innerText = "Texto contiene sólo letras minúsculas";
+    if (valor==0){
+        titulo.innerText = "Ningun mensaje fue encontrado";
+        subtitulo.innerText = "Ingresa el texto que desees encriptar o desencriptar";
         btnEncriptar.disabled = false;
         btnDesencriptar.disabled = false;
     }
+    else{
+        if (verificarMinusculas(valor) ) {
+            titulo.innerText = "Texto no encriptable";
+            subtitulo.innerText = "Texto debe contener sólo letras minúsculas";
+            btnEncriptar.disabled = true;
+            btnDesencriptar.disabled = true;
+        } else {
+            titulo.innerText = "Texto encriptable";
+            subtitulo.innerText = "Texto contiene sólo letras minúsculas y sin acentos";
+            btnEncriptar.disabled = false;
+            btnDesencriptar.disabled = false;
+        } 
+    }        
+    sinResultado();
+}
+
+function sinResultado(){
+    document.getElementById('mostrartextoSinresultado').style.display = "flex";       
+    document.getElementById('mostrartextoConresultado').style.display = "none";
+}
+
+function conResultado(){
+    document.getElementById('mostrartextoSinresultado').style.display = "none";       
+    document.getElementById('mostrartextoConresultado').style.display = "flex";
+    btnCopiar.focus();
 }
 
 function verificarMinusculas(textoValidar) {    
@@ -45,10 +65,8 @@ function encriptarTexto(){
             let element = texto[index];
             textoEncriptado += diccionario[element]??element;                   
         }
-        console.log(textoEncriptado);
         mensaje.innerText = textoEncriptado;
-        document.getElementById('mostrartextoSinresultado').style.display = "none";       
-        document.getElementById('mostrartextoConresultado').style.display = "flex";
+        conResultado();
     }
 }
 
@@ -63,17 +81,18 @@ function desencriptarTexto(){
         }
         textoDesencriptado = texto;
         mensaje.innerText = textoDesencriptado;
-        document.getElementById('mostrartextoSinresultado').style.display = "none";       
-        document.getElementById('mostrartextoConresultado').style.display = "flex";
+        conResultado();
     }
 }
 
 function Copiar(){
     navigator.clipboard.writeText(mensaje.innerText);
-    alert('texto copiado');
+    btnCopiar.textContent = 'Texto copiado.';
+    setTimeout(() => {
+        btnCopiar.textContent = 'Copiar';
+    }, 3000); // Ocultar el mensaje después de 3 segundos
 }
 
-// Seleccionar el área de texto y agregar el evento de entrada
 textarea.addEventListener('input', habilitadorEncriptacion);
 btnEncriptar.addEventListener('click', encriptarTexto);
 btnDesencriptar.addEventListener('click', desencriptarTexto);
