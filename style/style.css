@@ -1,35 +1,38 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
 
 :root {
     --color-primaria: #F3F5FC;
-    --color-secundaria: #0A3871;
-    --color-terciaria: #D8DFE8;
-    --color-cuarto: #495057;
-
-    --fuente1: 'Inter', sans-serif;
+    --color-secundaria: #1c4946;
+    --color-terciaria: #e5f3f2;
+    --color-cuarto: #491c1f;
+    --fuente1: 'Mulish', sans-serif;
 }
 
 html,body{
     height: 100%;
-    width: 100%; /* Asegura que el html y el body ocupen el 100% de la altura de la ventana */
+    width: 100%;
     margin: 0;    /* Elimina el margen por defecto */
     padding: 0;   /* Elimina el relleno por defecto */
 }
 
-body{
+body{       
     display: flex;
-    flex-direction: column-reverse;
-    align-items: normal;
+    flex-direction: column;
+    align-items: center;
     justify-items: center;
     background-color: var(--color-primaria);
     color: var(--color-secundaria);    
 }
 
 .contenedor{    
-    height: 95%;
+    max-width: 1400px;  
+    width: 90%;
+    height: 90%;
     display: flex;
     justify-content: space-between;
-    margin: 1%;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 40px;
     flex-direction: row;
 }
 
@@ -47,35 +50,40 @@ footer{
     position:fixed;   
     align-items: center;     
     justify-content: center;
+    bottom: 0%;
+    left: 0%;   
 }
 
 .logo{
     width: 10%;
+    height: fit-content;
+    display: flex;
+}
+
+.logo img{
+    inline-size: -webkit-fill-available;   
 }
 
 .ingresotexto{
     display: flex;
     flex-direction: column;
-    padding: 2%;
-    width: 60%; 
-    height: 90%;
-    max-height: 90%;
-    border: 1px solid #0A3871; /* Borde del recuadro */
+    padding-top: 10%;
+    padding-right: 3%;
+    width: 55%; 
+    height: 82%;
 }
 
 .ingresotexto__sup{
     height: 80%;
-    width: 100%;  
-    border: 1px solid #0A3871; /* Borde del recuadro */
+    width: auto;  
 }
 .ingresotexto__inf{
     height: 20%;
-    width: 100%;    
+    width: auto;    
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: baseline;
-    border: 1px solid #0A3871; /* Borde del recuadro */
 }
 
 textarea::placeholder{
@@ -89,11 +97,12 @@ textarea::placeholder{
     font-family: var(--fuente1);
     color: var(--color-secundaria);
     font-size: 2rem;
+    line-height: 3rem;
     font-weight: 400;
     text-align: left;
     overflow-wrap: break-word;
     resize: none;
-    border: 1px solid #0A3871; /* Borde del recuadro */
+    border: 1px  #0A3871; 
 }
 
 .ingresotexto__inf__mensaje{
@@ -103,12 +112,11 @@ textarea::placeholder{
     flex-direction: row;
     align-items: center;
     font-family: var(--fuente1);
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     line-height: 1rem;
     font-weight: 400; 
     text-align: left;
     color: var(--color-cuarto);
-    border: 1px solid #0d4716; /* Borde del recuadro */
 }
 
 .ingresotexto__inf__botones{
@@ -117,8 +125,7 @@ textarea::placeholder{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: flex-end; 
-    border: 1px solid #711f0a; /* Borde del recuadro */
+    align-items: center; 
 }
 
 button {
@@ -130,10 +137,10 @@ button {
     color: var(--color-terciaria);
     text-align: center;
     font-size: 1rem;
-    height: 5rem;
+    height: 4rem;
     width: 45%;
     border: 1px solid var(--color-secundaria); 
-    border-radius: 2rem; 
+    border-radius: 1.5rem; 
 }
 .ingresotexto__inf__botones__boton1:disabled{
     background-color: var(--color-cuarto);
@@ -144,10 +151,10 @@ button {
     color: var(--color-secundaria);
     text-align: center;
     font-size: 1rem;
-    height: 5rem;    
+    height: 4rem;    
     width: 45%;
     border: 1px solid var(--color-secundaria); 
-    border-radius: 2rem; 
+    border-radius: 1.5rem; 
 }
 
 .ingresotexto__inf__botones__boton2:disabled{
@@ -155,15 +162,13 @@ button {
     color: var(--color-terciaria);
 }
 .mostrartexto{
-    width: 30%;  
-    height: 95%;
+    width: 35%;  
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
     background-color: white;
-    margin: 0% 5% 0% 5%;
-    border: 1px solid rgb(163, 20, 20); 
     border-radius: 2rem; 
     box-shadow: 1px 1px 20px 10px var(--color-terciaria);
 }
@@ -178,12 +183,14 @@ button {
     overflow-wrap: break-word;
     text-align: center;
     color: var(--color-secundaria);    
-    border: 1px solid #0A3871; /* Borde del recuadro */
 }
 
 .mostrartexto__sinresultado__imagen{
     max-width: 95%;
     height: auto; 
+}
+.mostrartexto__sinresultado__imagen img {
+    inline-size: -webkit-fill-available;
 }
 
 .mostrartexto__sinresultado__titulo{
@@ -207,27 +214,25 @@ button {
     width: 80%;
     height: 100%;
     background-color: white;
-    border: 1px  #2c2a8f; 
+    border: 1px ; 
     border-radius: 2rem; 
     align-items: center;
 }
 
 .mostrartexto__conresultado__sup{
     width: 100%;
-    height: 90%;
+    height: 80%;
     display: flex;
     flex-direction: column;
-    border: 1px solid #0A3871; /* Borde del recuadro */
 }
 
 .mostrartexto__conresultado__inf{
     width: 100%;
-    height: 10%;
+    height: 15%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 1px solid #0A3871; /* Borde del recuadro */
 }
 
 .mostrartexto__conresultado__texto{
@@ -239,7 +244,7 @@ button {
     font-weight: 400;
     text-align: left;
     overflow-wrap: break-word;
-    border: 1px solid #0A3871; /* Borde del recuadro */
+    overflow-y: scroll;
 }
 
 .mostrartexto__conresultado__botoncopiar{
@@ -247,13 +252,13 @@ button {
     color: var(--color-secundaria);
     text-align: center;
     font-size: 1rem;
-    height: 5rem;
+    height: 4rem;
     width: 80%;
     border: 1px solid var(--color-secundaria); 
-    border-radius: 2rem; 
+    border-radius: 1.5rem; 
 }
 
-@media (max-width:1200px){
+@media (max-width:800px){
 
     html,body{
         display: flex;
@@ -261,26 +266,24 @@ button {
         width: 100%;
     }
     footer{
-        height: 30px;
-        position: fixed;
-        bottom: 0%;
-        left: 0%;        
+        height: 30px;     
     }
     .contenedor{
         flex-direction: column;
         justify-content: center;
         margin-bottom: 30px;
         margin-top: 30px;
+        margin-right: 30px;
         padding: 15px;
     }
     .logo{
-        height: 150px;
-        justify-self: start;        
+        width: 20%;    
     }
     .ingresotexto{
         width: auto;
         height: auto;
-        margin-bottom: 60px;
+        margin-bottom: 40px;
+        padding-right: 0%;
     }
     .mostrartexto{
         width: auto;
@@ -304,18 +307,53 @@ button {
         height: 4rem;
         border-radius: 1.5rem;
     }
-    .mostrartexto{
-        margin: 0%;
-    }
     .mostrartexto__sinresultado__imagen{
         display: none;
     }
     .mostrartexto__conresultado{
         height: auto;
         width: 90%;
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
     }
+    .mostrartexto__conresultado__sup{
+        height: auto;
+    }
+    .mostrartexto__conresultado__inf{
+        height: auto;
+    }
+    .mostrartexto__conresultado__botoncopiar{
+        width: 90%;
+    }
+}
 
-
+@media (max-width:480px){
+    .contenedor{
+        margin-bottom: 30px;
+        margin-top: 30px;
+        margin-right: 30px;
+        margin-left: 30px;
+    }    
+    .ingresotexto__sup{
+        height: 280px;
+        width: auto;
+    }
+    .ingresotexto__inf{
+        height: 40%;
+        width: auto;
+    }
+    .ingresotexto__inf__botones{
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .ingresotexto__inf__botones__boton1,
+    .ingresotexto__inf__botones__boton2{
+        width: 100%;
+    }
+    .ingresotexto__inf__botones__boton1{
+        margin-bottom: 20px;
+    }
+    footer{
+        font-size: 0.8rem;
+    }
 
 }
